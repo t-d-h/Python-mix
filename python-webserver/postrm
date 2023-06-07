@@ -1,0 +1,5 @@
+#!/bin/bash
+systemctl stop python-webserver.service
+rm -rf /var/python-webserver
+rm -f /lib/systemd/system/python-webserver.service
+systemctl daemon-reload

@@ -1,0 +1,4 @@
+#!/bin/bash
+chmod -R 777 /var/python-webserver
+systemctl daemon-reload
+systemctl start python-webserver.service

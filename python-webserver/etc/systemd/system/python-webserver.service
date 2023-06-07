@@ -1,0 +1,12 @@
+[Unit]
+Description=Run web server
+
+[Service]
+WorkingDirectory=/var/python-webserver/
+Restart=on-failure
+User=root
+Group=root
+ExecStart=/bin/python3 /var/python-webserver/main.py
+
+[Install]
+WantedBy=multi-user.target

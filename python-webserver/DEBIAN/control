@@ -1,0 +1,5 @@
+Package: python-webserver
+Version: 0.13
+Architecture: amd64
+Maintainer: Tran Dinh Hoan
+Description: Day la 1 web server don gian duoc viet bang python
