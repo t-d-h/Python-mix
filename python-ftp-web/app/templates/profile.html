@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title>profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        div.text-center > h3 {
+            text-align: left;
+        }
+    </style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 8px 100px; margin-bottom: 8px">
+    <a class="navbar-brand" href="#">Hệ thống quản lý tài khoản ftp</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Profile <span class="sr-only">(current)</span></a>
+            </li>
+            <li>
+            <a class="nav-link" href="/huong-dan">Hướng dẫn sử dụng <span class="sr-only">(current)</span></a>
+            </li>
+            <li>
+                <a class="nav-link" href="/cdn/FileZilla.exe">Tải FTP Client <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <div>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+</nav>
+    <center><h3>Hi, {{name}}</h3></center>
+<div class="row">
+    <div class="col-12" style="display: flex;justify-content: center">
+        <table class="table table-bordered table-hover" style="width: 30%">
+            <tbody>
+            <tr>
+                <td>Tài khoản ftp:</td>
+                <td>{{ftp_username_result}}</td>
+            </tr>
+            <tr>
+                <td>Mật khẩu ftp:</td>
+                <td>{{ftp_password_result}}</td>
+            </tr>
+            <tr>
+                <td>Dung lượng đã sử dụng:</td>
+                <td>{{used_space}}</td>
+            </tr>
+            <tr>
+                <td>Giới hạn dung lượng:</td>
+                <td>{{quota}}</td>
+            </tr>
+            <tr>
+                <td>Tình trạng tài khoản:</td>
+                <td>{{status}}</td>
+            </tr>
+            <tr>
+                <td>Địa chỉ ftp Server:</td>
+                <td>{{ip}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 text-center">
+        <form method="post" action="/ftp_lock">
+            <input class="btn btn-danger" type="submit" value="Khóa tài khoản ftp"/>
+        </form>
+        <form method="post" action="/ftp_unlock">
+            <input class="btn btn-success" type="submit" value="Mở khóa tài khoản ftp"/>
+        </form>
+        <form method="post" action="/ftp_chpasswd">
+            <input class="btn btn-primary" type="submit" value="Đổi mật khẩu ftp"/>
+        </form>
+        <a href="/chpasswd_form">Đổi mật khẩu tài khoản quản trị</a>
+    </div>
+</div>
+
+</body>
+</html>
